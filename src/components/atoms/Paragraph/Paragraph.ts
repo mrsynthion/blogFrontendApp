@@ -1,7 +1,8 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Paragraph = styled.p`
-  font-size: ${({ theme }) => theme.fontSize.h1};
+    font-size:${({theme}) => theme.fontSize.h4};
+    color: ${({theme}) => theme.colors.dark.textNormal}
 `;
 
 export default Paragraph;

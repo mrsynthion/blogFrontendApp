@@ -11,8 +11,22 @@ declare module 'styled-components'{
             h6:string
         },
         colors :{
-            background: string,
-            description:string
+            light:{
+                background:string,
+                backgroundSecondary:string,
+                header:string,
+                textNormal:string,
+                textTitle:string,
+                textLink:string
+            }
+            dark:{
+                background:string,
+                backgroundSecondary:string,
+                header:string,
+                textNormal:string,
+                textTitle:string,
+                textLink:string
+            }
         }
     }
 }

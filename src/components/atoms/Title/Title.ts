@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-
-const Title = styled.h3`
- font-size: ${({theme}) => theme.fontSize.h3};
- color:${({theme}) => theme.colors.dark.textTitle};
+const Title = styled.h1`
+  font-size: ${({ theme }) => theme.fontSize.h1};
+  color: ${({ theme }) => theme.colors.textTitle};
+  font-weight: ${({ theme }) => theme.fontWeight.bold};
 `;
 
 export default Title;

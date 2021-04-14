@@ -5,6 +5,7 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import MainTemplate from 'components/templates/MainTemplate/MainTemplate';
 import MainPage from './MainPage/MainPage';
 import { DefaultTheme } from 'styled-components';
+import FormPage from './FormPage/FormPage';
 
 const Root: React.FC = () => {
   const isDark: boolean = useAppSelector((state) => state.changeTheme.dark);
@@ -16,6 +17,11 @@ const Root: React.FC = () => {
         <Switch>
           <Route exact path="/" component={MainPage} />
           <Route path="/MainPage" render={() => <Redirect to="/" />} />
+          <Route path="/AddArticle" component={FormPage} />
+          <Route
+            path="/addarticle"
+            render={() => <Redirect to="/AddArticle" />}
+          />
         </Switch>
       </MainTemplate>
     </BrowserRouter>

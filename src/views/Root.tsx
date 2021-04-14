@@ -7,7 +7,7 @@ import MainPage from './MainPage/MainPage';
 import { DefaultTheme } from 'styled-components';
 
 const Root: React.FC = () => {
-  const isDark: boolean = useAppSelector((state) => state.dark);
+  const isDark: boolean = useAppSelector((state) => state.changeTheme.dark);
   let Theme: DefaultTheme = isDark ? darkTheme : lightTheme;
 
   return (

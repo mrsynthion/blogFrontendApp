@@ -1,6 +1,4 @@
-import FormInput from 'components/atoms/FormInput/FormInput';
 import React from 'react';
-import Header from '../Header/Header';
 import NamedInput from '../NamedInput/NamedInput';
 import { Wrapper } from './AddArticleForm.styled';
 
@@ -10,9 +8,11 @@ const AddArticleForm: React.FC<Props> = () => {
   return (
     <>
       <Wrapper>
-        <Header />
-        <NamedInput title="Article title" placeholder="Article title" />
-        <FormInput placeholder="siems" />
+        <NamedInput
+          title="Article title"
+          placeholder="Article title"
+          type="title"
+        />
       </Wrapper>
     </>
   );

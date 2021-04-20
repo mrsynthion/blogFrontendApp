@@ -13,6 +13,11 @@ const AddArticleForm: React.FC<Props> = () => {
           placeholder="Article title"
           type="title"
         />
+        <NamedInput
+          title="Description"
+          placeholder="Main text"
+          type="description"
+        />
       </Wrapper>
     </>
   );

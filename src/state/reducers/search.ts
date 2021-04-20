@@ -17,7 +17,7 @@ interface changeAction {
 }
 const initialState: SearchState = {
   value: '',
-  title: false,
+  title: true,
   description: false,
   tags: false,
 };

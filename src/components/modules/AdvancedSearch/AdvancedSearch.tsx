@@ -1,5 +1,5 @@
 import AdvancedSearchItem from 'components/atoms/AdvancedSearchItem/AdvancedSearchItem';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Triangle, Button, Wrapper } from './AdvancedSearch.styled';
 interface Props {
   Placeholder: string;
@@ -7,9 +7,6 @@ interface Props {
 
 const AdvancedSearch: React.FC<Props> = ({ Placeholder }) => {
   const [isActive, setIsActive] = useState(false);
-  useEffect(() => {
-    console.log(isActive);
-  }, [isActive]);
   return (
     <>
       <Button onClick={() => setIsActive(!isActive)}>

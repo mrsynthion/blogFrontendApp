@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input } from './FormInput.styled';
+import { Input, TextArea } from './FormInput.styled';
 
 enum Types {
   Title = 'title',
@@ -19,7 +19,12 @@ const FormInput: React.FC<Props> = ({ placeholder, type }) => {
           <Input placeholder={placeholder} />
         </>
       );
-
+    case Types.Description:
+      return (
+        <>
+          <TextArea placeholder={placeholder} />
+        </>
+      );
     default:
       return <h1>siema</h1>;
   }

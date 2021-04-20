@@ -19,8 +19,6 @@ const SearchInput: React.FC<Props> = () => {
       value,
     });
   }, [searchState, value]);
-  console.log(value);
-  console.log(searchState);
   return (
     <Wrapper
       placeholder="Search"

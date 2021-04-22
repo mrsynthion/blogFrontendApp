@@ -7,6 +7,10 @@ interface Props {
 }
 
 const SubmitArticleButton: React.FC<Props> = ({ placeholder, action }) => {
-  return <Button onClick={action}>{placeholder}</Button>;
+  return (
+    <Button type="submit" onClick={action}>
+      {placeholder}
+    </Button>
+  );
 };
 export default SubmitArticleButton;

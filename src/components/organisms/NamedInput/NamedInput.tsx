@@ -7,13 +7,19 @@ interface Props {
   title: string;
   placeholder: string;
   type: string;
+  isClicked: boolean;
 }
 
-const NamedInput: React.FC<Props> = ({ title, placeholder, type }) => {
+const NamedInput: React.FC<Props> = ({
+  title,
+  placeholder,
+  type,
+  isClicked,
+}) => {
   return (
     <Wrapper>
       <Title isSmall>{title}</Title>
-      <FormInput type={type} placeholder={placeholder} />
+      <FormInput type={type} placeholder={placeholder} isClicked={isClicked} />
     </Wrapper>
   );
 };

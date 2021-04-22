@@ -8,18 +8,16 @@ import { Input, TextArea } from './FormInput.styled';
 interface Props {
   placeholder: string;
   type: string;
+  isClicked?: boolean;
 }
 
-const FormInput: React.FC<Props> = ({ placeholder, type }) => {
+const FormInput: React.FC<Props> = ({ placeholder, type, isClicked }) => {
   const articleFormState = useAppSelector(
     (state) => state.changeArticleFormState
   );
   const dispatch = useAppDispatch();
 
-  const [obj, setObj] = useState(
-    useAppSelector((state) => state.changeArticleFormState)
-  );
-
+  const [obj, setObj] = useState(articleFormState);
   useEffect(() => {
     dispatch(changeArticleFormState(obj));
     // eslint-disable-next-line
@@ -33,6 +31,7 @@ const FormInput: React.FC<Props> = ({ placeholder, type }) => {
           onChange={(e) =>
             setObj({ ...articleFormState, articleTitle: e.target.value })
           }
+          value={isClicked ? '' : articleFormState.articleTitle}
         />
       );
     case Types.Description:
@@ -42,6 +41,7 @@ const FormInput: React.FC<Props> = ({ placeholder, type }) => {
           onChange={(e) =>
             setObj({ ...articleFormState, articleDescription: e.target.value })
           }
+          value={isClicked ? '' : articleFormState.articleDescription}
         />
       );
     case Types.Tags:
@@ -54,6 +54,7 @@ const FormInput: React.FC<Props> = ({ placeholder, type }) => {
               articleTags: tagsToArray(e.target.value),
             })
           }
+          value={isClicked ? '' : articleFormState.articleTags}
         />
       );
     default:

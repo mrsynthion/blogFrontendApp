@@ -1,4 +1,4 @@
-import { tagsToArray } from 'components/services/tagsToArray/tagsToArray';
+import { textToArray } from 'components/services/textToArray/textToArray';
 import { Types } from 'Enums/FormInputTypesEnum/FormInputTypesEnum';
 import React, { useEffect, useState } from 'react';
 import { useAppSelector, useAppDispatch } from 'state/hooks/hooks';
@@ -51,7 +51,7 @@ const FormInput: React.FC<Props> = ({ placeholder, type, isClicked }) => {
           onChange={(e) =>
             setObj({
               ...articleFormState,
-              articleTags: tagsToArray(e.target.value),
+              articleTags: textToArray(e.target.value, ','),
             })
           }
           value={isClicked ? '' : articleFormState.articleTags}

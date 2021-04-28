@@ -7,3 +7,11 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
+export const PostsWrapper = styled.div<{ length: Number }>`
+  width: 100%;
+  display: grid;
+  grid-template-rows: ${({ length }) => `repeat(${length},300px)`};
+  align-items: center;
+  justify-items:center;
+`;

@@ -1,6 +1,11 @@
 import AdvancedSearchItem from 'components/atoms/AdvancedSearchItem/AdvancedSearchItem';
 import React, { useState } from 'react';
-import { Triangle, Button, Wrapper } from './AdvancedSearch.styled';
+import {
+  Triangle,
+  Button,
+  Wrapper,
+  MainWrapper,
+} from './AdvancedSearch.styled';
 interface Props {
   Placeholder: string;
 }
@@ -8,7 +13,7 @@ interface Props {
 const AdvancedSearch: React.FC<Props> = ({ Placeholder }) => {
   const [isActive, setIsActive] = useState(false);
   return (
-    <>
+    <MainWrapper>
       <Button onClick={() => setIsActive(!isActive)}>
         {Placeholder}
         <Triangle />
@@ -18,7 +23,7 @@ const AdvancedSearch: React.FC<Props> = ({ Placeholder }) => {
         <AdvancedSearchItem label="description" />
         <AdvancedSearchItem label="tags" />
       </Wrapper>
-    </>
+    </MainWrapper>
   );
 };
 

@@ -13,5 +13,10 @@ export const PostsWrapper = styled.div<{ length: Number }>`
   display: grid;
   grid-template-rows: ${({ length }) => `repeat(${length},300px)`};
   align-items: center;
-  justify-items:center;
+  justify-items: center;
+`;
+
+export const SearchWrapper = styled.div`
+  margin: 10px 0;
+  height: 100px;
 `;

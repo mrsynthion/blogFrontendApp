@@ -1,3 +1,4 @@
+import ArticleTitle from 'components/atoms/ArticleTitle/ArticleTitle';
 import { textToArray } from 'components/services/textToArray/textToArray';
 import React from 'react';
 import { Wrapper } from './ArticleUnit.styled';
@@ -12,7 +13,7 @@ const ArticleUnit: React.FC<Props> = ({ id, title, text }) => {
 
   return (
     <Wrapper>
-      <h1>{title}</h1>
+      <ArticleTitle isArticle>{title}</ArticleTitle>
       <p>{Text[0]}.</p>
     </Wrapper>
   );

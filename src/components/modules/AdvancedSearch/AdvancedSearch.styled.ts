@@ -37,4 +37,10 @@ export const Wrapper = styled.div<Props>`
   border-radius: 20px;
   box-shadow: 0 0 15px ${({ theme }) => theme.colors.opposite};
   z-index: 3;
+  position: absolute;
+  top: 50px;
+`;
+export const MainWrapper = styled.div`
+  position: relative;
+  height: 200px;
 `;

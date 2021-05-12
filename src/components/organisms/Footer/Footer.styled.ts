@@ -20,10 +20,10 @@ export const FooterWrap = styled.div`
 `;
 
 export const Button = styled.button`
-  width: 30px;
+  width: 150px;
   height: 18px;
+  border-radius: 20px;
   color: ${({ theme }) => theme.colors.textLink};
-  border-radius: 100%;
   text-decoration: none;
   outline: none;
   border: 1px solid ${({ theme }) => theme.colors.opposite};

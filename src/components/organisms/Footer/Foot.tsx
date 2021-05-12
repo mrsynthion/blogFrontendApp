@@ -8,7 +8,7 @@ const Foot = () => {
       <FooterWrap>
         <Paragraph>Blog osobisty .. o ..</Paragraph>
         <Button as={NavLink} to="/">
-          M
+          Strona główna
         </Button>
       </FooterWrap>
     </FooterWrapper>

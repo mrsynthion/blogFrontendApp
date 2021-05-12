@@ -21,7 +21,7 @@ export const Input = styled.input<InputProps>`
 
 export const TextArea = styled.textarea`
   width: 30%;
-  height: 100px;
+  height: 200px;
   border-radius: 20px;
   margin: 10px;
   outline: none;

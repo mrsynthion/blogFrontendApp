@@ -3,7 +3,7 @@ import axios from 'axios';
 import SubmitArticleButton from 'components/atoms/SubmitArticleButton/SubmitArticleButton';
 import { Types } from 'Enums/FormInputTypesEnum/FormInputTypesEnum';
 import NamedInput from '../NamedInput/NamedInput';
-import { Response, Wrapper } from './AddArticleForm.styled';
+import { Response, SuccessWrapper, Wrapper } from './AddArticleForm.styled';
 import { useAppDispatch, useAppSelector } from 'state/hooks/hooks';
 import { changeArticleFormState } from 'state/reducers/articleForm';
 
@@ -17,7 +17,7 @@ const AddArticleForm: React.FC<Props> = () => {
 
   const sendPosts = (post: any) => {
     axios
-      .post('http://192.168.1.7:3000/tryMakeNewPost', {
+      .post('http://192.168.1.10:3000/tryMakeNewPost', {
         title: post.articleTitle,
         description: post.articleDescription,
         tags: post.articleTags.join(','),
@@ -66,13 +66,13 @@ const AddArticleForm: React.FC<Props> = () => {
         {isError ? <Response>Failed to submit the article</Response> : null}
       </Wrapper>
       {isSuccess ? (
-        <Wrapper>
+        <SuccessWrapper>
           <Response>Your article has been added successfully.</Response>
           <SubmitArticleButton
             placeholder="Add new article"
             action={() => setIsSuccess(false)}
           />
-        </Wrapper>
+        </SuccessWrapper>
       ) : null}
     </>
   );

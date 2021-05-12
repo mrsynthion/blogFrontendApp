@@ -10,5 +10,5 @@ export const Wrapper = styled.div`
 export const PersonInfoParagraph = styled.p`
   color: ${({ theme }) => theme.colors.textTitle};
   margin-left: 20px;
-  font-size: ${({theme}) => theme.fontSize.h3};
+  font-size: ${({ theme }) => theme.fontSize.h3};
 `;

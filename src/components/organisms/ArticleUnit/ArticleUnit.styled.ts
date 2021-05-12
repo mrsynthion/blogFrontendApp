@@ -1,7 +1,21 @@
 import styled from 'styled-components';
+import Paragraph from 'components/atoms/Paragraph/Paragraph';
+import { NavLink } from 'react-router-dom';
 
 export const Wrapper = styled.div`
-  height: 250px;
+  height: 150px;
   width: 50%;
-  background-color: ${({ theme }) => theme.colors.backgroundSecondary};
+  border-bottom: 0.1px dashed ${({ theme }) => theme.colors.opposite};
+  padding: 5px;
+`;
+
+export const Tags = styled(Paragraph)`
+  margin-top: 5%;
+  font-style: italic;
+  color: ${({ theme }) => theme.colors.opposite};
+  font-size: ${({ theme }) => theme.fontSize.h6};
+`;
+export const StyledNavLink = styled(NavLink)`
+  outline: none;
+  text-decoration: none;
 `;

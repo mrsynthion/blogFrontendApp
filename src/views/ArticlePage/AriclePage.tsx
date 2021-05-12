@@ -1,3 +1,4 @@
+import Foot from 'components/organisms/Footer/Foot';
 import Header from 'components/organisms/Header/Header';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
@@ -18,17 +19,20 @@ interface Props {
 
 const ArticlePage: React.FC<Props> = ({ post }) => {
   return (
-    <Wrapper>
-      <Header />
-      <ArticleWrapper>
-        <Title>{post.title}</Title>
-        <Description>{post.description}</Description>
-        <Tags>Tags: {post.tags}</Tags>
-        <ExitButton as={NavLink} to="/">
-          Powrót
-        </ExitButton>
-      </ArticleWrapper>
-    </Wrapper>
+    <>
+      <Wrapper>
+        <Header />
+        <ArticleWrapper>
+          <Title>{post.title}</Title>
+          <Description>{post.description}</Description>
+          <Tags>Tags: {post.tags}</Tags>
+          <ExitButton as={NavLink} to="/">
+            Powrót
+          </ExitButton>
+        </ArticleWrapper>
+      </Wrapper>
+      <Foot />
+    </>
   );
 };
 export default ArticlePage;

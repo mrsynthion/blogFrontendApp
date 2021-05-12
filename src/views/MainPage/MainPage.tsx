@@ -1,11 +1,12 @@
 import axios from 'axios';
 import Navigation from 'components/modules/Navigation/Navigation';
 import ArticleUnit from 'components/organisms/ArticleUnit/ArticleUnit';
+import Foot from 'components/organisms/Footer/Foot';
 import Header from 'components/organisms/Header/Header';
 import { postFilter } from 'components/services/postFilter/postFilter';
 import React, { useEffect, useState } from 'react';
 import { useAppSelector } from 'state/hooks/hooks';
-import { PostsWrapper, Wrapper } from './MainPage.styles';
+import { PostsWrapper, Wrap, Wrapper } from './MainPage.styles';
 
 interface Props {}
 export interface Post {
@@ -36,47 +37,50 @@ const MainPage: React.FC<Props> = () => {
   console.log(posts);
 
   return (
-    <Wrapper>
-      <Header />
-      <Navigation />
-      <PostsWrapper length={posts.length}>
-        {posts.length !== 0
-          ? posts.map((post: Post) => {
-              if (searchValue.length !== 0) {
-                const filteredPost = postFilter(
-                  isTitle,
-                  isDescription,
-                  isTags,
-                  searchValue,
-                  post
-                );
-                if (filteredPost) {
+    <Wrap>
+      <Wrapper>
+        <Header />
+        <Navigation />
+        <PostsWrapper length={posts.length}>
+          {posts.length !== 0
+            ? posts.map((post: Post) => {
+                if (searchValue.length !== 0) {
+                  const filteredPost = postFilter(
+                    isTitle,
+                    isDescription,
+                    isTags,
+                    searchValue,
+                    post
+                  );
+                  if (filteredPost) {
+                    return (
+                      <ArticleUnit
+                        title={filteredPost.title}
+                        text={filteredPost.description}
+                        id={filteredPost.id}
+                        key={filteredPost.id}
+                        tags={filteredPost.tags}
+                      />
+                    );
+                  }
+                } else {
                   return (
                     <ArticleUnit
-                      title={filteredPost.title}
-                      text={filteredPost.description}
-                      id={filteredPost.id}
-                      key={filteredPost.id}
-                      tags={filteredPost.tags}
+                      title={post.title}
+                      text={post.description}
+                      id={post.id}
+                      key={post.id}
+                      tags={post.tags}
                     />
                   );
                 }
-              } else {
-                return (
-                  <ArticleUnit
-                    title={post.title}
-                    text={post.description}
-                    id={post.id}
-                    key={post.id}
-                    tags={post.tags}
-                  />
-                );
-              }
-              return null;
-            })
-          : null}
-      </PostsWrapper>
-    </Wrapper>
+                return null;
+              })
+            : null}
+        </PostsWrapper>
+      </Wrapper>
+      <Foot />
+    </Wrap>
   );
 };
 
